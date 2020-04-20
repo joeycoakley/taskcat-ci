@@ -120,6 +120,10 @@ Resources:
               commands:
                 - echo Entered the build phase...
                 - cd $PROJECTNAME
+                - echo $S3Bucket
+                - echo $S3Region
+                - echo $AWS::URLSuffix
+                - echo $QSS3KeyPrefix
                 - taskcat test run -l
                 - |
                   if $(grep -Fq "CREATE_FAILED" taskcat_outputs/index.html)
