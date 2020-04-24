@@ -197,7 +197,7 @@
             "Type": "AWS::Lambda::Function",
             "Properties": {
                 "Handler": "ssm.lambda_handler",
-                "MemorySize": "128",
+                "MemorySize": 128,
                 "Role": {
                     "Fn::GetAtt": [
                         "CreateSecureStringParameterKeyRole",
@@ -205,7 +205,7 @@
                     ]
                 },
                 "Runtime": "python3.6",
-                "Timeout": "300",
+                "Timeout": 300,
                 "Code": {
                     "S3Bucket" : {
 			            "Ref" : "LambdaZipsBucket"
